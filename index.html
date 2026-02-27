@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,189 +7,433 @@
   <title>Sound of Mint</title>
   <meta
     name="description"
-    content="Sound of Mint. A sonic and experiential journey across global cultures through electronic music and acoustic instruments from the world live performances."
+    content="Sound of Mint. A sonic and experiential journey across global cultures through electronic music and acoustic instruments."
   />
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root{
+      --bg:#000;
+      --text:#fff;
+      --muted:rgba(255,255,255,.72);
+      --faint:rgba(255,255,255,.12);
+      --card:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.14);
+      --radius:18px;
+      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --max:1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+    }
+    a{ color:var(--text); text-decoration:none; }
+    a:hover{ opacity:.9; }
+    img{ max-width:100%; display:block; }
+
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    /* HERO (logo centered + menu below) */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:56px 20px;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(1100px 760px at 30% 20%, rgba(70,120,255,.14), transparent 55%),
+        radial-gradient(900px 700px at 78% 25%, rgba(0,220,180,.12), transparent 55%),
+        linear-gradient(180deg, #000, #05060a);
+    }
+
+    .hero-center{
+      text-align:center;
+      width:100%;
+      max-width:900px;
+      padding:30px 10px;
+    }
+
+    .hero-logo{
+      width:520px;
+      max-width:92vw;
+      margin:0 auto 44px;
+      filter: drop-shadow(0 18px 50px rgba(0,0,0,.55));
+    }
+
+    .hero-nav{
+      display:flex;
+      justify-content:center;
+      gap:44px;
+      flex-wrap:wrap;
+      row-gap:18px;
+      margin:0 auto 26px;
+    }
+
+    .hero-nav a{
+      font-size:13px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.78);
+      padding:8px 6px;
+    }
+    .hero-nav a:hover{
+      color:rgba(255,255,255,1);
+    }
+
+    .hero-sub{
+      max-width:760px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .hero-links{
+      margin-top:22px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .hero-links a{ color:var(--muted); }
+    .hero-links a:hover{ color:var(--text); }
+    .dot{ color:rgba(255,255,255,.35); }
+
+    /* SECTIONS */
+    .section{
+      padding:78px 0;
+      border-top:1px solid var(--faint);
+      background:rgba(255,255,255,.01);
+    }
+    .section.alt{
+      background:rgba(255,255,255,.02);
+    }
+
+    .h2{
+      margin:0 0 10px;
+      font-size:28px;
+      letter-spacing:.2px;
+    }
+    .p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+      max-width:820px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .card{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .bullets{
+      display:grid;
+      gap:10px;
+      margin-top:14px;
+    }
+    .bullet{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.22);
+      border-radius:14px;
+      padding:10px 12px;
+      color:rgba(255,255,255,.82);
+      font-size:14px;
+    }
+
+    .links-list{
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+    .links-list a{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(255,255,255,.85);
+    }
+    .links-list a span{
+      color:rgba(255,255,255,.55);
+      font-size:13px;
+    }
+
+    .videos{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+    .video{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.25);
+      box-shadow:var(--shadow);
+    }
+    .video iframe{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      display:block;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+    .gallery img{
+      width:100%;
+      height:340px;
+      object-fit:cover;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:rgba(0,0,0,.18);
+    }
+
+    .note{
+      margin-top:14px;
+      color:rgba(255,255,255,.65);
+      font-size:13px;
+      border-left:2px solid rgba(255,255,255,.16);
+      padding-left:12px;
+    }
+
+    .footer{
+      border-top:1px solid var(--faint);
+      padding:26px 0;
+      background:#000;
+    }
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      color:rgba(255,255,255,.65);
+      font-size:13px;
+    }
+
+    @media (max-width: 920px){
+      .grid-2{ grid-template-columns:1fr; }
+      .videos{ grid-template-columns:1fr; }
+      .gallery{ grid-template-columns:1fr; }
+      .gallery img{ height:320px; }
+      .hero-logo{ width:460px; }
+      .hero-nav{ gap:26px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="container nav">
-    <a class="brand" href="#top">Sound of Mint</a>
-    <nav class="menu">
-      <a href="#listen">Listen</a>
-      <a href="#watch">Watch</a>
-      <a href="#photos">Photos</a>
-      <a href="#press">Press</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-center">
+      <!-- Put your logo file in the repo root as: logo.png -->
+      <img class="hero-logo" src="logo.png" alt="Sound of Mint" />
 
-<main id="top">
+      <nav class="hero-nav" aria-label="Primary">
+        <a href="#listen">Music</a>
+        <a href="#about">About</a>
+        <a href="#watch">Watch</a>
+        <a href="#photos">Photos</a>
+        <a href="#press">Press</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="container hero-inner">
-    <p class="tag">Electronic plus acoustic instruments from the world</p>
-    <h1 class="title">A Sonic & Experiential Journey Across Global Cultures</h1>
-    <p class="subtitle">
-      Sound of Mint blends electronic music with live acoustic instruments,
-      global textures, and immersive performance energy.
-    </p>
+      <p class="hero-sub">
+        Sound of Mint blends electronic music with live acoustic instruments, global textures, and immersive performance energy.
+      </p>
 
-    <div class="cta">
-      <a class="btn primary" href="#listen">Listen</a>
-      <a class="btn ghost" href="#watch">Watch Live</a>
-      <a class="btn ghost" href="https://linktr.ee/soundofmint" target="_blank">All Links</a>
+      <div class="hero-links" aria-label="Quick links">
+        <a href="https://open.spotify.com" target="_blank" rel="noopener">Spotify</a>
+        <span class="dot">•</span>
+        <a href="https://music.apple.com" target="_blank" rel="noopener">Apple Music</a>
+        <span class="dot">•</span>
+        <a href="https://soundcloud.com" target="_blank" rel="noopener">SoundCloud</a>
+        <span class="dot">•</span>
+        <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+        <span class="dot">•</span>
+        <a href="https://linktr.ee" target="_blank" rel="noopener">Linktree</a>
+      </div>
     </div>
+  </section>
 
-    <div class="quicklinks">
-      <a href="https://open.spotify.com/artist/1YTxtF8PYrZhWBdqUE9cHz?si=ea8CzXIvQ2iSODwSSIFWHg" target="_blank">Spotify</a>
-      <span class="dot">•</span>
-      <a href="https://music.apple.com/ke/artist/sound-of-mint/1411194972" target="_blank">Apple Music</a>
-      <span class="dot">•</span>
-      <a href="https://soundcloud.com/soundofmint" target="_blank">SoundCloud</a>
-      <span class="dot">•</span>
-      <a href="https://www.youtube.com/@SoundOfMint" target="_blank">YouTube</a>
-      <span class="dot">•</span>
-      <a href="https://linktr.ee/soundofmint" target="_blank">Linktree</a>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <h2 class="h2">Bio</h2>
+          <p class="p">
+            Sound of Mint is an electro ethnic live act by Fadel Lahlou, blending electronic music with rare acoustic instruments from around the world.
+          </p>
+          <p class="p">
+            Supported by icons like Black Coffee, Blondish, and Laurent Garnier, and signed to labels including Sol Selectas and Buddha Bar Records, Sound of Mint has performed over 1000 shows worldwide.
+          </p>
+
+          <h2 class="h2" style="margin-top:26px;">Live Experience</h2>
+          <div class="bullets">
+            <div class="bullet">Global instruments and textures</div>
+            <div class="bullet">Electronic rhythms and bass</div>
+            <div class="bullet">Immersive performance energy</div>
+            <div class="bullet">Adaptable festival and club format</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="h2">Press Kit</h2>
+          <p class="p">
+            Download materials and one sheet for promoters and venues.
+          </p>
+          <div class="links-list">
+            <a href="Sound-of-Mint-Press-Kit-2026.pdf" target="_blank" rel="noopener">
+              Press Kit PDF <span>(opens PDF)</span>
+            </a>
+            <a href="Sound-of-Mint-Technical-&-Hosp..." target="_blank" rel="noopener">
+              Tech and Hospitality <span>(check filename in repo)</span>
+            </a>
+          </div>
+          <p class="note">
+            If a link 404s, the filename in your repo does not match. Copy the exact filename from GitHub.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container grid-2">
-    <div>
-      <h2 class="h2">Bio</h2>
+  <!-- LISTEN -->
+  <section class="section alt" id="listen">
+    <div class="container">
+      <h2 class="h2">Listen</h2>
+      <p class="p">Streaming links.</p>
+      <div class="links-list">
+        <a href="https://open.spotify.com" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com" target="_blank" rel="noopener">Apple Music</a>
+        <a href="https://soundcloud.com" target="_blank" rel="noopener">SoundCloud</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WATCH -->
+  <section class="section" id="watch">
+    <div class="container">
+      <h2 class="h2">Watch Live</h2>
+      <p class="p">Videos and live performances.</p>
+
+      <div class="videos">
+        <div class="video">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Sound of Mint video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Sound of Mint video 2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <p class="note">
+        Replace the YouTube embed IDs with your real ones.
+      </p>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section class="section alt" id="photos">
+    <div class="container">
+      <h2 class="h2">Photos</h2>
+      <p class="p">Selected press images.</p>
+
+      <div class="gallery">
+        <img src="photo1.jpg" alt="Sound of Mint photo 1" />
+        <img src="photo2.jpg" alt="Sound of Mint photo 2" />
+        <img src="photo3.jpg" alt="Sound of Mint photo 3" />
+      </div>
+
+      <p class="note">
+        Make sure the filenames match exactly: photo1.jpg, photo2.jpg, photo3.jpg
+      </p>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section class="section" id="press">
+    <div class="container">
+      <h2 class="h2">Press</h2>
       <p class="p">
-        Sound of Mint is an electro ethnic live act by Fadel Lahlou,
-        blending electronic music with rare acoustic instruments
-        from around the world.
+        For bookings, collaborations, and media inquiries.
       </p>
-      <p class="p">
-        Supported by icons like Black Coffee, Blondish, and Laurent Garnier,
-        and signed to labels including Sol Selectas and Buddha Bar Records,
-        Sound of Mint has performed over 1000 shows worldwide.
-      </p>
-    </div>
 
-    <div class="card">
-      <h3 class="h3">Live Experience</h3>
-      <div class="bullets">
-        <div class="bullet">Global instruments and textures</div>
-        <div class="bullet">Electronic rhythms and bass</div>
-        <div class="bullet">Immersive performance energy</div>
-        <div class="bullet">Adaptable festival and club format</div>
+      <div class="card">
+        <div class="links-list">
+          <a href="Sound-of-Mint-Press-Kit-2026.pdf" target="_blank" rel="noopener">Press Kit PDF</a>
+        </div>
+        <p class="note">
+          Add quotes, featured venues, and press links here later.
+        </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="listen" class="section alt">
-  <div class="container">
-    <h2 class="h2">Listen</h2>
+  <!-- CONTACT -->
+  <section class="section alt" id="contact">
+    <div class="container">
+      <h2 class="h2">Contact</h2>
+      <p class="p">Send an email for bookings and inquiries.</p>
 
-    <div class="cards">
-      <a class="tile" href="https://open.spotify.com/artist/1YTxtF8PYrZhWBdqUE9cHz?si=ea8CzXIvQ2iSODwSSIFWHg" target="_blank">
-        <div class="tile-title">Spotify</div>
-      </a>
-
-      <a class="tile" href="https://music.apple.com/ke/artist/sound-of-mint/1411194972" target="_blank">
-        <div class="tile-title">Apple Music</div>
-      </a>
-
-      <a class="tile" href="https://soundcloud.com/soundofmint" target="_blank">
-        <div class="tile-title">SoundCloud</div>
-      </a>
-
-      <a class="tile" href="https://www.youtube.com/@SoundOfMint" target="_blank">
-        <div class="tile-title">YouTube</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="watch" class="section">
-  <div class="container">
-    <h2 class="h2">Watch Live</h2>
-
-    <div class="videos">
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/8LpdvFeekeY?start=857"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/E60_Jdrin6M"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
+      <div class="card">
+        <div class="links-list">
+          <a href="mailto:lahlou.fadel@gmail.com">lahlou.fadel@gmail.com</a>
+        </div>
+        <p class="note">
+          You can also add Instagram, booking agent, and management links here.
+        </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="photos" class="section alt">
-  <div class="container">
-    <h2 class="h2">Photos</h2>
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Sound of Mint photo 1" />
-      <img src="photo2.jpg" alt="Sound of Mint photo 2" />
-      <img src="photo3.jpg" alt="Sound of Mint photo 3" />
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Sound of Mint</div>
+      <div><a href="#top">Back to top</a></div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="press" class="section">
-  <div class="container grid-2">
-    <div>
-      <h2 class="h2">Press & Booking</h2>
-
-      <div class="cta">
-        <a class="btn primary" href="Sound-of-Mint-Press-Kit-2026.pdf" target="_blank">
-          Press Kit
-        </a>
-        <a class="btn ghost" href="Sound-of-Mint-Technical-&-Hosp...pdf" target="_blank">
-          Technical Rider
-        </a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3 class="h3">Booking</h3>
-      <p class="p small">
-        contact@soundofmintmusic.com
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section alt">
-  <div class="container">
-    <h2 class="h2">Contact</h2>
-    <a class="btn primary" href="mailto:contact@soundofmintmusic.com">
-      contact@soundofmintmusic.com
-    </a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container footer-inner">
-    <div>© <span id="year"></span> Sound of Mint</div>
-  </div>
-</footer>
-
-</main>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+```
