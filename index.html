@@ -782,12 +782,19 @@ With hints of North and Sub-Saharan Africa, The Sound of Mint is a unique moment
 Upcoming musical collaborations will be driven by this joy of coming together, sharing human warmth, and recreating this African echo in the middle of the urban desert or in unconventional venues.</p>
         
       </div>
-    <video id="heroVideo" autoplay muted loop playsinline preload="metadata"
-style="width:100%; height:400px; object-fit:cover; display:block;">
-    <source src="videos/hero.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <video id="heroVideo" controls autoplay muted preload="auto"
+style="width:100%; height:400px; object-fit:cover;">
+  <source src="videos/hero.mp4" type="video/mp4">
+</video>
 
+<script>
+const video = document.getElementById("heroVideo");
+
+// au premier clic utilisateur → activer le son
+video.addEventListener("click", () => {
+  video.muted = false;
+});
+</script>
   <!-- Mute/Unmute button -->
   <button id="muteBtn" 
           style="position: absolute; top: 10px; right: 10px; z-index: 2; padding: 8px 12px; background: rgba(0,0,0,0.5); color: white; border: none; cursor: pointer;">
