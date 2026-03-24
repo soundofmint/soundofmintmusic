@@ -32,7 +32,6 @@
       overflow-x: hidden;
     }
 
-    /* Navigation */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -45,7 +44,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.04);
     }
 
-    .nav-logo {
+    .nav-logo { 
       font-family: 'Syne', sans-serif;
       font-weight: 800;
       font-size: 12px;
@@ -70,7 +69,6 @@
       letter-spacing: 0.06em;
       transition: color 0.2s;
     }
-
     .nav-links a:hover { color: var(--white); }
 
     .nav-cta {
@@ -84,12 +82,10 @@
       border: none;
       padding: 10px 22px;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s;
     }
-
     .nav-cta:hover { background: var(--accent); }
 
-    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -99,18 +95,9 @@
       text-align: center;
       padding: 120px 24px 80px;
       position: relative;
-      overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(200,184,154,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-logo{
+    .hero-logo {
       display:block;
       margin:0 auto 40px auto;
       max-width:420px;
@@ -119,7 +106,6 @@
     }
 
     .service-tag {
-      font-family: 'DM Sans', sans-serif;
       font-size: 10px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -160,16 +146,13 @@
 
     section { padding: 100px 48px; }
 
-    .section-label {
+    .section-label{
       font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--text-dim);
       margin-bottom: 24px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-      justify-content:center;
+      text-align: center;
     }
 
     .service-card {
@@ -179,11 +162,8 @@
       border: 1px solid var(--border);
       border-radius: 4px;
       overflow: hidden;
-      transition: border-color 0.3s;
       margin-bottom: 16px;
     }
-
-    .service-card:hover { border-color: var(--accent2); }
 
     .service-content {
       padding: 48px 40px;
@@ -203,12 +183,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
       filter: grayscale(30%) contrast(1.1);
-      transition: transform 0.5s;
     }
 
-    /* Video Section */
     .music-video-wrap {
       display: flex;
       align-items: center;
@@ -220,35 +197,37 @@
       width: 100%;
       aspect-ratio: 16 / 9;
       background: #000;
-      border-radius: 6px;
+      border-radius: 8px;
       overflow: hidden;
+      max-width: 900px;
     }
 
     .video-frame iframe {
       width: 100%;
       height: 100%;
       border: 0;
+      display: block;
     }
 
-    /* Logos Section */
+    /* ------------- LOGO ROW FIX ------------- */
     .logos-row {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 40px;
-      padding: 32px 0;
+      gap: 48px;
+      padding: 48px 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       text-align: center;
     }
 
     .logo-item {
-      height: 30px;
+      height: 50px;
       width: auto;
-      max-width: 130px;
+      max-width: 160px;
       object-fit: contain;
-      opacity: 0.65;
+      opacity: 0.75;
       filter: grayscale(100%);
       transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
     }
@@ -256,26 +235,15 @@
     .logo-item:hover {
       opacity: 1;
       filter: grayscale(0%);
-      transform: scale(1.04);
+      transform: scale(1.06);
     }
 
     @media (max-width: 900px) {
-      .logo-item {
-        height: 26px;
-        max-width: 120px;
-      }
-
-      .logos-row {
-        gap: 28px;
-        padding: 28px 0;
-      }
-
-      .service-card {
-        grid-template-columns: 1fr;
-      }
+      .logo-item { height: 36px; max-width: 130px; }
+      .logos-row { gap: 32px; padding: 32px 0; }
+      .service-card { grid-template-columns: 1fr; }
     }
 
-    /* Footer */
     footer {
       background: var(--dark);
       border-top: 1px solid var(--border);
@@ -291,23 +259,10 @@
       margin-bottom: 48px;
     }
 
-    .footer-col ul {
-      list-style: none;
-      padding-left: 14px;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 12px;
-    }
-
-    .footer-col ul li a {
-      font-size: 13px;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col ul li a:hover { color: var(--white); }
+    .footer-col ul { list-style: none; padding-left: 14px; }
+    .footer-col li { margin-bottom: 12px; }
+    .footer-col a { color: var(--text-dim); text-decoration: none; }
+    .footer-col a:hover { color: var(--white); }
 
     .footer-bottom {
       max-width: 980px;
@@ -319,13 +274,9 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 8px;
-    }
-
-    .footer-bottom p {
       font-size: 12px;
       color: var(--muted);
     }
-
   </style>
 </head>
 <body>
@@ -337,9 +288,7 @@
       <li><a href="#about">Music</a></li>
       <li><a href="#contact">Links</a></li>
     </ul>
-    <a href="mailto:contact@soundofmintmusic.com">
-      <button class="nav-cta">Get in touch</button>
-    </a>
+    <a href="mailto:contact@soundofmintmusic.com"><button class="nav-cta">Get in touch</button></a>
   </nav>
 
   <section class="hero" id="home">
@@ -349,56 +298,37 @@
     <div class="waveform-wrap" id="waveform"></div>
   </section>
 
-  <section class="services" id="services">
-    <div style="text-align:center; margin-bottom:16px;">
-      <div class="section-label">About</div>
-    </div>
-
-    <div class="service-card fade-up">
+  <section id="services">
+    <div class="section-label">About</div>
+    <div class="service-card">
       <div class="service-content">
         <div class="service-tag">Electro-ethnic live act</div>
-        <p>Sound of Mint is an electro-ethnic live act by Fadel Lahlou, blending electronic music with rare acoustic instruments from around the world. His performances fuse global traditions with modern rhythms, creating a mystical and energetic soundscape. Supported by icons like Black Coffee, Blond:ish, and Laurent Garnier, and signed on labels such as Sol Selectas, Get Physical Music, Buddha Bar Records, Madorasindahouse, and Café de Anatolia, Sound of Mint has performed over 1000+ shows worldwide.</p>
+        <p>Sound of Mint is an electro-ethnic live act by Fadel Lahlou, blending electronic music with rare acoustic instruments from around the world. His performances fuse global traditions with modern rhythms, creating a mystical and energetic soundscape. Supported by icons like Black Coffee, Blond:ish, and Laurent Garnier, Sound of Mint performs worldwide.</p>
       </div>
-      <div class="service-image">
-        <img src="hero.jpg" alt="Sound of Mint live performance">
-      </div>
+      <div class="service-image"><img src="hero.jpg" alt="Sound of Mint live performance"></div>
     </div>
   </section>
 
   <section id="about">
-    <div style="text-align:center; margin-bottom:16px;">
-      <div class="section-label">Music</div>
-    </div>
-
-    <div class="service-card fade-up" style="width: 100%; overflow: hidden;">
+    <div class="section-label">Music</div>
+    <div class="service-card">
       <div class="service-content">
         <div class="service-tag">PURE by We Love Buzz with Sound of Mint</div>
-        <p>Sound of Mint, the artistic vision of Fadel Lahlou, unfolds as a deeply personal and evolving musical journey, where electronic textures meet organic instrumentation in a space of freedom and emotion. Rooted in improvisation and shaped by influences from North and Sub Saharan Africa, his sound creates an immersive and intimate sonic experience that transcends genres across cultures of the world.</p>
+        <p>Sound of Mint, the artistic vision of Fadel Lahlou, unfolds as a deeply personal and evolving musical journey, where electronic textures meet organic instrumentation in a space of freedom and emotion. Rooted in improvisation and shaped by influences from North and Sub Saharan Africa, his sound creates an immersive and intimate sonic experience that transcends cultures globally.</p>
       </div>
-
       <div class="music-video-wrap">
         <div class="video-frame">
-          <iframe src="[youtube.com](https://www.youtube.com/embed/8LpdvFeekeY)" title="Sound of Mint Live Performance" allowfullscreen></iframe>
+          <iframe src="[youtube.com](https://www.youtube.com/embed/8LpdvFeekeY)" title="Sound of Mint Live Performance" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
     <div class="logos-row">
-      <a href="[music.apple.com](https://music.apple.com/ke/artist/sound-of-mint/1411194972)" target="_blank">
-        <img src="04.png" alt="Apple Music" class="logo-item">
-      </a>
-      <a href="[soundofmintmusic.bandcamp.com](https://soundofmintmusic.bandcamp.com/)" target="_blank">
-        <img src="05.png" alt="Bandcamp" class="logo-item">
-      </a>
-      <a href="[beatport.com](https://www.beatport.com/artist/sound-of-mint/702845)" target="_blank">
-        <img src="01.png" alt="Beatport" class="logo-item">
-      </a>
-      <a href="[soundcloud.com](https://soundcloud.com/soundofmint)" target="_blank">
-        <img src="02.png" alt="SoundCloud" class="logo-item">
-      </a>
-      <a href="[open.spotify.com](https://open.spotify.com/artist/1YTxtF8PYrZhWBdqUE9cHz)" target="_blank">
-        <img src="03.png" alt="Spotify" class="logo-item">
-      </a>
+      <a href="[music.apple.com](https://music.apple.com/ke/artist/sound-of-mint/1411194972)" target="_blank"><img src="04.png" alt="Apple Music" class="logo-item"></a>
+      <a href="[soundofmintmusic.bandcamp.com](https://soundofmintmusic.bandcamp.com/)" target="_blank"><img src="05.png" alt="Bandcamp" class="logo-item"></a>
+      <a href="[beatport.com](https://www.beatport.com/artist/sound-of-mint/702845)" target="_blank"><img src="01.png" alt="Beatport" class="logo-item"></a>
+      <a href="[soundcloud.com](https://soundcloud.com/soundofmint)" target="_blank"><img src="02.png" alt="SoundCloud" class="logo-item"></a>
+      <a href="[open.spotify.com](https://open.spotify.com/artist/1YTxtF8PYrZhWBdqUE9cHz)" target="_blank"><img src="03.png" alt="Spotify" class="logo-item"></a>
     </div>
   </section>
 
@@ -413,41 +343,34 @@
           <li><a href="[linktr.ee](https://linktr.ee/soundofmint)" target="_blank">Linktree</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <div class="section-label">Music</div>
         <ul>
           <li><a href="[open.spotify.com](https://open.spotify.com/artist/1YTxtF8PYrZhWBdqUE9cHz)" target="_blank">Spotify</a></li>
           <li><a href="[youtube.com](https://www.youtube.com/c/SoundOfMint)" target="_blank">YouTube</a></li>
-          <li><a href="[beatport.com](https://www.beatport.com/artist/sound-of-mint/702845)" target="_blank">Beatport</a></li>
           <li><a href="[soundcloud.com](https://soundcloud.com/soundofmint)" target="_blank">SoundCloud</a></li>
+          <li><a href="[beatport.com](https://www.beatport.com/artist/sound-of-mint/702845)" target="_blank">Beatport</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <div class="section-label">Record Label</div>
-        <ul>
-          <li><a href="[tajinekulture.com](https://tajinekulture.com)" target="_blank">Tajine Kulture</a></li>
-        </ul>
+        <ul><li><a href="[tajinekulture.com](https://tajinekulture.com)" target="_blank">Tajine Kulture</a></li></ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2026 Sound of Mint. All rights reserved.</p>
-      <p>Electro-Ethnic Live Act</p>
       <p>Designed by <a href="[4thlabs.online](https://4thlabs.online)" target="_blank" style="color:#c8b89a;">4thlabs</a></p>
     </div>
   </footer>
 
   <script>
-    // Waveform Animation
     const wf = document.getElementById('waveform');
-    const heights = [20,35,55,70,85,60,40,90,75,50,30,65,80,45,25,70,90,60,35,55,80,45,65,30,75];
-    heights.forEach((h, i) => {
-      const bar = document.createElement('div');
-      bar.className = 'bar';
-      bar.style.height = h + 'px';
-      bar.style.animationDelay = (i * 0.05) + 's';
+    const heights = [20,35,55,70,85,60,40,90,75,50,30,65,80,45,25];
+    heights.forEach((h,i)=>{
+      const bar=document.createElement('div');
+      bar.className='bar';
+      bar.style.height=h+'px';
+      bar.style.animationDelay=i*0.05+'s';
       wf.appendChild(bar);
     });
   </script>
