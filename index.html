@@ -330,7 +330,46 @@
     width:80%;
     height:auto;
   }
+.music-feature{
+  grid-template-columns: 1fr 1.2fr;
+  align-items: stretch;
+}
 
+.music-video-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.video-frame{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.video-frame iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.service-content{
+  max-width: 620px;
+}
+
+@media (max-width: 900px){
+  .music-feature{
+    grid-template-columns: 1fr;
+  }
+
+  .music-video-wrap{
+    padding: 0;
+    margin-top: 20px;
+  }
+}
   .logos-row img.logo-item {
     height: 50px;
     width: auto;
