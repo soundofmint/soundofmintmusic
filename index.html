@@ -22,7 +22,6 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -33,7 +32,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -42,7 +40,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 18px 48px;
-    
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255,255,255,0.04);
   }
@@ -56,16 +53,14 @@
     color: var(--white);
   }
 
-  .nav-logo span { color: var(--accent); }
-
   .nav-links {
-display:flex;
-gap:36px;
-list-style:none;
-position:absolute;
-left:50%;
-transform:translateX(-50%);
-}
+    display:flex;
+    gap:36px;
+    list-style:none;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+  }
 
   .nav-links a {
     font-family: 'DM Sans', sans-serif;
@@ -94,7 +89,6 @@ transform:translateX(-50%);
 
   .nav-cta:hover { background: var(--accent); }
 
-  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -115,70 +109,6 @@ transform:translateX(-50%);
     pointer-events: none;
   }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 7px 16px 7px 7px;
-    margin-bottom: 32px;
-    font-size: 12px;
-    color: var(--text-mid);
-    letter-spacing: 0.05em;
-  }
-
-  .hero-badge-icon {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    background: var(--accent);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px;
-    color: var(--black);
-    font-weight: 700;
-  }
-
-  h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(72px, 12vw, 140px);
-    line-height: 0.92;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    margin-bottom: 24px;
-  }
-
-  .hero-sub {
-    font-size: 14px;
-    color: var(--text-mid);
-    line-height: 1.7;
-    max-width: 280px;
-    margin-bottom: 36px;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    font-family: 'Syne', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--black);
-    background: var(--white);
-    border: none;
-    padding: 14px 32px;
-    border-radius: 100px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    margin-bottom: 20px;
-  }
-
-  .btn-primary:hover {
-    background: var(--accent);
-    transform: translateY(-1px);
-  }
-
   .hero-email {
     font-size: 12px;
     color: var(--text-dim);
@@ -186,7 +116,6 @@ transform:translateX(-50%);
     margin-top: 8px;
   }
 
-  /* ── WAVEFORM ── */
   .waveform-wrap {
     width: 100%;
     max-width: 700px;
@@ -211,7 +140,6 @@ transform:translateX(-50%);
     50% { transform: scaleY(1); opacity: 1; }
   }
 
-  /* ── LOGOS ── */
   .logos-row {
     padding: 48px 0;
     border-top: 1px solid var(--border);
@@ -223,52 +151,27 @@ transform:translateX(-50%);
     flex-wrap: wrap;
   }
 
-  .logo-item {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    transition: color 0.2s;
-  }
-
-  .logo-item:hover { color: var(--text-mid); }
-
-  /* ── SECTION COMMON ── */
   section { padding: 100px 48px; }
 
-  .section-label {
+  .section-label{
     font-family: 'DM Sans', sans-serif;
     font-size: 11px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--text-dim);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    margin-bottom: 24px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding-left:14px;
   }
 
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 28px;
-    height: 1px;
+  .section-label::before{
+    content:"";
+    width:24px;
+    height:1px;
     background: var(--muted);
   }
-
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(40px, 6vw, 72px);
-    color: var(--white);
-    letter-spacing: 0.04em;
-    margin-bottom: 64px;
-    text-align: center;
-  }
-
-  /* ── WHAT I DO ── */
-  .services { background: var(--black); }
 
   .services-inner {
     max-width: 860px;
@@ -304,44 +207,11 @@ transform:translateX(-50%);
     margin-bottom: 14px;
   }
 
-  .service-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 22px;
+  .service-card p {
+    font-size: 14px;
     color: var(--white);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
- .service-card p {
-  font-size: 14px;
-  color: var(--white);
-  line-height: 1.75;
-  margin-bottom: 28px;
-}
-
-  .btn-outline {
-    display: inline-block;
-    font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text);
-    background: transparent;
-    border: 1px solid var(--border);
-    padding: 10px 22px;
-    border-radius: 100px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: border-color 0.2s, color 0.2s;
-    align-self: flex-start;
-  }
-
-  .btn-outline:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    line-height: 1.75;
+    margin-bottom: 28px;
   }
 
   .service-image {
@@ -349,8 +219,7 @@ transform:translateX(-50%);
     overflow: hidden;
   }
 
-  .service-image img,
-  .service-image .img-placeholder {
+  .service-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -359,157 +228,6 @@ transform:translateX(-50%);
     transition: transform 0.5s;
   }
 
-  .service-card:hover .img-placeholder { transform: scale(1.03); }
-
-  .img-placeholder {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2218 50%, #1a1410 100%);
-    min-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .img-placeholder::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  /* studio icon SVG-style inside placeholder */
-  .studio-icon {
-    font-size: 64px;
-    opacity: 0.15;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ── MARQUEE ── */
-  .marquee-section {
-    padding: 80px 0;
-    overflow: hidden;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
-
-  .marquee-track {
-    display: flex;
-    gap: 0;
-    white-space: nowrap;
-    animation: marqueeScroll 20s linear infinite;
-  }
-
-  .marquee-item {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5vw, 56px);
-    letter-spacing: 0.06em;
-    padding: 0 40px;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--border);
-    transition: -webkit-text-stroke-color 0.3s;
-  }
-
-  .marquee-item.filled {
-    color: var(--white);
-    -webkit-text-stroke: none;
-  }
-
-  .marquee-dot {
-    font-size: 16px;
-    color: var(--accent);
-    align-self: center;
-    padding: 0 8px;
-  }
-
-  @keyframes marqueeScroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* ── ABOUT ── */
-  .about { background: var(--black); }
-
-  .about-inner {
-    max-width: 980px;
-    margin: 0 auto;
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-
-  .about-values {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .value-item { position: relative; }
-
-  .value-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 72px;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--border);
-    line-height: 1;
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  .value-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .value-text {
-    font-size: 13px;
-    color: var(--text-dim);
-    line-height: 1.75;
-  }
-
-  .about-center-img {
-    width: 200px;
-    flex-shrink: 0;
-  }
-
-  .about-img-frame {
-    width: 200px;
-    height: 360px;
-    background: linear-gradient(180deg, #1a1a1a 0%, #2a1e14 100%);
-    border-radius: 120px 120px 4px 4px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
-
-  .about-img-frame .person-icon {
-    font-size: 80px;
-    opacity: 0.2;
-    padding-bottom: 20px;
-  }
-
-  .about-cta-wrap {
-    text-align: center;
-    margin-top: 64px;
-  }
-
-  /* ── FOOTER ── */
   footer {
     background: var(--dark);
     border-top: 1px solid var(--border);
@@ -525,42 +243,10 @@ transform:translateX(-50%);
     margin-bottom: 48px;
   }
 
-  .footer-brand .nav-logo {
-    font-size: 14px;
-    margin-bottom: 16px;
-    display: block;
+  .footer-col ul {
+    list-style: none;
+    padding-left: 14px;
   }
-
-  .footer-tagline {
-    font-size: 13px;
-    color: var(--text-dim);
-    line-height: 1.7;
-    max-width: 220px;
-    margin-bottom: 20px;
-  }
-
-  .footer-credit {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-  }
-
-  .footer-credit a {
-    color: var(--accent2);
-    text-decoration: none;
-  }
-
-  .footer-col h4 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-mid);
-    margin-bottom: 20px;
-  }
-
-  .footer-col ul { list-style: none; }
 
   .footer-col ul li {
     margin-bottom: 12px;
@@ -590,7 +276,6 @@ transform:translateX(-50%);
     color: var(--muted);
   }
 
-  /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
     transform: translateY(30px);
@@ -602,169 +287,120 @@ transform:translateX(-50%);
     transform: translateY(0);
   }
 
-  /* ── RESPONSIVE ── */
+  .top-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .top-light::before{
+    content:"";
+    position:absolute;
+    top:-200px;
+    left:50%;
+    transform:translateX(-50%);
+    width:1200px;
+    height:600px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,0.15) 0%,
+      rgba(255,255,255,0.08) 25%,
+      rgba(255,255,255,0.02) 50%,
+      transparent 70%
+    );
+    filter: blur(40px);
+    animation: shineMove 8s ease-in-out infinite;
+  }
+
+  @keyframes shineMove{
+    0%{ transform:translateX(-50%) scale(1); opacity:0.6; }
+    50%{ transform:translateX(-48%) scale(1.05); opacity:1; }
+    100%{ transform:translateX(-52%) scale(1); opacity:0.6; }
+  }
+
+  .hero-logo{
+    display:block;
+    margin:0 auto 40px auto;
+    max-width:420px;
+    width:80%;
+    height:auto;
+  }
+
+  .logos-row img.logo-item {
+    height: 50px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+  }
+
+  .logos-row img.logo-item:hover {
+    filter: none;
+  }
+
+  @media (max-width:1024px){
+    .hero-logo{ max-width:340px; }
+  }
+
   @media (max-width: 768px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
     section { padding: 64px 24px; }
     .service-card { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-center-img { display: none; }
     .footer-inner { grid-template-columns: 1fr; }
     .logos-row { gap: 32px; }
     footer { padding: 48px 24px 32px; }
-  }
-  
-  /* Top shining light effect */
-
-.top-light {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 400px;
-pointer-events: none;
-z-index: 0;
-overflow: hidden;
-}
-
-.top-light::before{
-content:"";
-position:absolute;
-top:-200px;
-left:50%;
-transform:translateX(-50%);
-width:1200px;
-height:600px;
-
-background: radial-gradient(
-ellipse at center,
-rgba(255,255,255,0.15) 0%,
-rgba(255,255,255,0.08) 25%,
-rgba(255,255,255,0.02) 50%,
-transparent 70%
-);
-
-filter: blur(40px);
-animation: shineMove 8s ease-in-out infinite;
-}
-
-@keyframes shineMove{
-0%{
-transform:translateX(-50%) scale(1);
-opacity:0.6;
-}
-
-50%{
-transform:translateX(-48%) scale(1.05);
-opacity:1;
-}
-
-100%{
-transform:translateX(-52%) scale(1);
-opacity:0.6;
-}
-}
-
-.hero-logo{
-display:block;
-margin:0 auto 40px auto;
-max-width:420px;   /* taille desktop */
-width:80%;
-height:auto;
-}
-
-/* tablette */
-@media (max-width:1024px){
-.hero-logo{
-max-width:340px;
-}
-}
-
-/* mobile */
-@media (max-width:768px){
-.hero-logo{
-max-width:260px;
-width:85%;
-}
-}
-</style>
-<style>
-  .logos-row img.logo-item {
-    height: 50px;       /* all logos have the same height */
-    width: auto;        /* maintain original aspect ratio */
-    display: block;
-    object-fit: contain;
-	opacity: 0.6;
-    filter: grayscale(100%); /* optional: minimalistic monochrome */
-    transition: filter 0.3s;
-  }
-
-  .logos-row img.logo-item:hover {
-    filter: none; /* color appears on hover */
+    .hero-logo{ max-width:260px; width:85%; }
   }
 </style>
 </head>
 <body>
 <div class="top-light"></div>
-<!-- NAV -->
+
 <nav>
   <div class="nav-logo"></div>
   <ul class="nav-links">
-   <li><a href="#">Home</a></li>
+    <li><a href="#home">Home</a></li>
     <li><a href="#services">About</a></li>
     <li><a href="#about">Music</a></li>
-   
     <li><a href="#contact">Links</a></li>
   </ul>
   <a href="mailto:contact@soundofmintmusic.com">
-  <button class="nav-cta">Get in touch</button>
-</a>
+    <button class="nav-cta">Get in touch</button>
+  </a>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
- 
-<img src="img/logo.png" alt="Sound of Mint Logo" class="hero-logo">
-
- <p class="hero-sub">
-     <div class="service-tag">Electro-Ethnic Live Act</div>
-    
-  </p>
- 
- 
-
+  <img src="logo.png" alt="Sound of Mint Logo" class="hero-logo">
+  <div class="service-tag">Electro-Ethnic Live Act</div>
   <p class="hero-email">contact@soundofmintmusic.com</p>
-
-  <!-- Animated waveform -->
   <div class="waveform-wrap" id="waveform"></div>
 </section>
 
-
-
-<!-- WHAT I DO -->
 <section class="services" id="services">
   <div class="services-inner">
-    <div style="text-align:center; margin-bottom: 16px;">
+    <div style="text-align:center; margin-bottom:16px;">
       <div class="section-label" style="justify-content:center">About</div>
     </div>
-    
 
     <div class="service-card fade-up">
       <div class="service-content">
         <div class="service-tag">Electro-ethnic live act</div>
-      
         <p>Sound of Mint is an electro-ethnic live act by Fadel Lahlou, blending electronic music with rare acoustic instruments from around the world. His performances fuse global traditions with modern rhythms, creating a mystical and energetic soundscape. Supported by icons like Black Coffee, Blond:ish, and Laurent Garnier, and signed on labels such as Sol Selectas, Get Physical Music, Buddha Bar Records, Madorasindahouse, and Café de Anatolia, Sound of Mint has performed over 1000+ shows worldwide, from France to Morocco, to Angola, Greece, Mexico, and the US.</p>
-        
       </div>
       <div class="service-image">
-        <img src="img/hero.jpg" alt="Sound of Mint live performance">
+        <img src="hero.jpg" alt="Sound of Mint live performance">
       </div>
     </div>
-
   </div>
 </section>
-
 
 <section class="services" id="about">
   <div class="services-inner" style="text-align:center; margin-bottom:16px;">
@@ -772,121 +408,77 @@ width:85%;
   </div>
 
   <div class="service-card fade-up" style="width: 100%; overflow: hidden;">
-   <div class="service-content">
-        <div class="service-tag">PURE by We Love Buzz with Sound of Mint</div>
-      
-        <p>Sound of Mint, the artistic vision of Fadel Lahlou, unfolds as a deeply personal and evolving musical journey, where electronic textures meet organic instrumentation in a space of freedom and emotion. Rooted in improvisation and shaped by influences from North and Sub Saharan Africa, his sound creates an immersive and intimate sonic experience that transcends genres across cultures of the world.
- 
+    <div class="service-content">
+      <div class="service-tag">PURE by We Love Buzz with Sound of Mint</div>
+      <p>Sound of Mint, the artistic vision of Fadel Lahlou, unfolds as a deeply personal and evolving musical journey, where electronic textures meet organic instrumentation in a space of freedom and emotion. Rooted in improvisation and shaped by influences from North and Sub Saharan Africa, his sound creates an immersive and intimate sonic experience that transcends genres across cultures of the world.
+
 This performance reflects the essence of his upcoming album WE ARE ONE, set to be released on his newly launched label Tajine Kulture. More than a project, it is a statement of unity, connection, and shared human energy. Through Sound of Mint, Fadel invites listeners into a living dialogue where music becomes a bridge between cultures, moments, and souls.
- 
+
 Each live performance whether in a festival, club or intimate setting is conceived as a unique encounter, an invitation to feel, to move, and to reconnect, whether in the heart of the city or in unexpected spaces.</p>
-        
-      </div>
-    <video id="heroVideo" controls autoplay muted loop preload="auto"
-style="width:100%; height:400px; object-fit:cover;">
-  <source src="videos/hero.mp4" type="video/mp4">
-</video>
+    </div>
 
-<script>
-const video = document.getElementById("heroVideo");
-
-// au premier clic utilisateur → activer le son
-video.addEventListener("click", () => {
-  video.muted = false;
-});
-</script>
- 
-</div>
-
-<script>
-const video = document.getElementById("heroVideo");
-const btn = document.getElementById("muteBtn");
-
-btn.addEventListener("click", function() {
-  if (video.muted) {
-    video.muted = false;
-    video.play(); // important for mobile
-    btn.textContent = "Mute";
-  } else {
-    video.muted = true;
-    btn.textContent = "Unmute";
-  }
-});
-</script>
+    <video id="heroVideo" controls autoplay muted loop preload="auto" style="width:100%; height:400px; object-fit:cover;">
+      <source src="hero.mp4" type="video/mp4">
+    </video>
   </div>
 
-
-  <!-- LOGOS -->
-<div class="logos-row" style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; padding: 20px 0;">
- 
-   <a href="https://music.apple.com/ke/artist/sound-of-mint/1411194972" target="_blank"><img src="img/04.png" alt="Apple Music" class="logo-item"> </a>
-   <a href="https://soundofmintmusic.bandcamp.com/" target="_blank"><img src="img/05.png" alt="Bandcamp" class="logo-item"> </a>
-   <a href="https://www.beatport.com/artist/sound-of-mint/702845" target="_blank"><img src="img/01.png" alt="Beatport" class="logo-item"> </a>
-   <a href="https://soundcloud.com/soundofmint" target="_blank"><img src="img/02.png" alt="SoundCloud" class="logo-item"> </a>
-   <a href="https://open.spotify.com/artist/1YTxtF8PYrZhWBdqUE9cHz" target="_blank"><img src="img/03.png" alt="Spotify" class="logo-item"> </a>
-</div>
+  <div class="logos-row" style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; padding: 20px 0;">
+    <a href="https://music.apple.com/ke/artist/sound-of-mint/1411194972" target="_blank"><img src="04.png" alt="Apple Music" class="logo-item"></a>
+    <a href="https://soundofmintmusic.bandcamp.com/" target="_blank"><img src="05.png" alt="Bandcamp" class="logo-item"></a>
+    <a href="https://www.beatport.com/artist/sound-of-mint/702845" target="_blank"><img src="01.png" alt="Beatport" class="logo-item"></a>
+    <a href="https://soundcloud.com/soundofmint" target="_blank"><img src="02.png" alt="SoundCloud" class="logo-item"></a>
+    <a href="https://open.spotify.com/artist/1YTxtF8PYrZhWBdqUE9cHz" target="_blank"><img src="03.png" alt="Spotify" class="logo-item"></a>
+  </div>
 </section>
 
 <br><br><br><br><br><br><br><br><br>
 
- <div class="section-label" style="justify-content:center">Links</div>
+<div class="section-label" style="justify-content:center">Links</div>
 
-<!-- FOOTER -->
 <footer id="contact">
-
   <div class="footer-inner">
-    
     <div class="footer-col">
-       <div class="section-label" style="justify-content:center">Sound Of Mint</div>
+      <div class="section-label">Sound Of Mint</div>
       <ul>
         <li><a href="#home">Home</a></li>
-		<li><a href="#services">About</a></li>
+        <li><a href="#services">About</a></li>
         <li><a href="#about">Music</a></li>
-		<li><a href="https://drive.google.com/file/d/1GpApJuXbSdmdc8OFf8siFNw6F5D_HE8t/view?usp=sharing" target="_blank">Press Kit</a></li>
-		<li><a href="https://drive.google.com/file/d/1LZKRAzUgIjfoCQW5UX3ru77fpAxwXwbL/view?usp=sharing" target="_blank">Hospitality & Technical Riders</a></li>
-		<li><a href="https://drive.google.com/drive/folders/1nNVYVnE0pycTL1Z7ijqHSWZgT1RyrKRi?usp=drive_link" target="_blank">Press Photos</a></li>
-		 <li><a href="https://linktr.ee/soundofmint" target="_blank">Linktree</a></li> 
-        
-        
+        <li><a href="https://drive.google.com/file/d/1GpApJuXbSdmdc8OFf8siFNw6F5D_HE8t/view?usp=sharing" target="_blank">Press Kit</a></li>
+        <li><a href="https://drive.google.com/file/d/1LZKRAzUgIjfoCQW5UX3ru77fpAxwXwbL/view?usp=sharing" target="_blank">Hospitality & Technical Riders</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1nNVYVnE0pycTL1Z7ijqHSWZgT1RyrKRi?usp=drive_link" target="_blank">Press Photos</a></li>
+        <li><a href="https://linktr.ee/soundofmint" target="_blank">Linktree</a></li>
       </ul>
     </div>
+
     <div class="footer-col">
-      <div class="section-label" style="justify-content:center">Music</div>
+      <div class="section-label">Music</div>
       <ul>
         <li><a href="https://open.spotify.com/intl-fr/track/17MjOXRybmMvTm58b5TmzV?go=1&sp_cid=df1e1520c1986a78eb1cc0985dfddef9&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=702f5c40b3014b10" target="_blank">Ya Sidi Single</a></li>
-      <li><a href="https://open.spotify.com/intl-fr/album/0NRW2pPUqCVRHHlej2vqKA?go=1&sp_cid=03b7bec1929d04d001e992c3f077e9e5&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=1dd5ed417dfe4791" target="_blank">The Atlas Lion EP</a></li>
-      <li><a href="https://open.spotify.com/artist/1YTxtF8PYrZhWBdqUE9cHz" target="_blank">Spotify</a></li>
-         <li><a href="https://www.youtube.com/c/SoundOfMint" target="_blank">Watch Videos</a></li> 
-		  <li><a href="https://www.beatport.com/artist/sound-of-mint/702845" target="_blank">Shop on Beatport</a></li> 
-		  	  <li><a href="https://soundcloud.com/soundofmint" target="_blank">SoundCloud</a></li> 
-			  <li><a href="http://soundofmintmusic.bandcamp.com/" target="_blank">Buy Edits & Remixes</a></li> 
+        <li><a href="https://open.spotify.com/intl-fr/album/0NRW2pPUqCVRHHlej2vqKA?go=1&sp_cid=03b7bec1929d04d001e992c3f077e9e5&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=1dd5ed417dfe4791" target="_blank">The Atlas Lion EP</a></li>
+        <li><a href="https://open.spotify.com/artist/1YTxtF8PYrZhWBdqUE9cHz" target="_blank">Spotify</a></li>
+        <li><a href="https://www.youtube.com/c/SoundOfMint" target="_blank">Watch Videos</a></li>
+        <li><a href="https://www.beatport.com/artist/sound-of-mint/702845" target="_blank">Shop on Beatport</a></li>
+        <li><a href="https://soundcloud.com/soundofmint" target="_blank">SoundCloud</a></li>
+        <li><a href="http://soundofmintmusic.bandcamp.com/" target="_blank">Buy Edits & Remixes</a></li>
       </ul>
     </div>
-	     <div class="footer-col">
-       <div class="section-label" style="justify-content:center"> Record Label </div>
+
+    <div class="footer-col">
+      <div class="section-label">Record Label</div>
       <ul>
         <li><a href="https://tajinekulture.com" target="_blank">Tajine Kulture</a></li>
-		
-		
-		
-        
-        
       </ul>
     </div>
-	  
-	  
-	  
-	  
-	  
   </div>
+
   <div class="footer-bottom">
     <p>© 2026 Sound of Mint. All rights reserved.</p>
-    <p>Electro-Ethnic Live Act</p>  <p>Designed by <a href="https://4thlabs.online" target="_blank" style="color:#c8b89a;">4thlabs</a></p>
+    <p>Electro-Ethnic Live Act</p>
+    <p>Designed by <a href="https://4thlabs.online" target="_blank" style="color:#c8b89a;">4thlabs</a></p>
   </div>
 </footer>
 
 <script>
-  // ── Generate waveform bars ──
   const wf = document.getElementById('waveform');
   const heights = [20,35,55,70,85,60,40,90,75,50,30,65,80,45,25,70,90,60,35,55,80,45,65,30,75,50,85,40,20,60,90,70,35,55,80,25,65,45,75,90,50,30,60,85,40,70,55,35,80,65,45,25,90,60,50,75,30,85,40,65];
   heights.forEach((h, i) => {
@@ -898,18 +490,21 @@ btn.addEventListener("click", function() {
     wf.appendChild(bar);
   });
 
-  // ── Scroll fade-up ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-      }
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // ── Nav active state ──
+  const video = document.getElementById("heroVideo");
+  if (video) {
+    video.addEventListener("click", () => {
+      video.muted = false;
+    });
+  }
+
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     nav.style.borderBottomColor = window.scrollY > 50
