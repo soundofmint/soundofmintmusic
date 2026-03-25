@@ -32,6 +32,7 @@
       overflow-x: hidden;
     }
 
+    /* Navigation */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -44,7 +45,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.04);
     }
 
-    .nav-logo { 
+    .nav-logo {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
       font-size: 12px;
@@ -69,6 +70,7 @@
       letter-spacing: 0.06em;
       transition: color 0.2s;
     }
+
     .nav-links a:hover { color: var(--white); }
 
     .nav-cta {
@@ -84,8 +86,10 @@
       cursor: pointer;
       transition: background 0.2s;
     }
+
     .nav-cta:hover { background: var(--accent); }
 
+    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -95,9 +99,18 @@
       text-align: center;
       padding: 120px 24px 80px;
       position: relative;
+      overflow: hidden;
     }
 
-    .hero-logo {
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(200,184,154,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-logo{
       display:block;
       margin:0 auto 40px auto;
       max-width:420px;
@@ -146,7 +159,7 @@
 
     section { padding: 100px 48px; }
 
-    .section-label{
+    .section-label {
       font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -209,7 +222,7 @@
       display: block;
     }
 
-    /* ------------- LOGO ROW FIX ------------- */
+    /* Logos Section */
     .logos-row {
       display: flex;
       justify-content: center;
@@ -316,15 +329,18 @@
         <div class="service-tag">PURE by We Love Buzz with Sound of Mint</div>
         <p>Sound of Mint, the artistic vision of Fadel Lahlou, unfolds as a deeply personal and evolving musical journey, where electronic textures meet organic instrumentation in a space of freedom and emotion. Rooted in improvisation and shaped by influences from North and Sub Saharan Africa, his sound creates an immersive and intimate sonic experience that transcends cultures globally.</p>
       </div>
-     <div class="video-frame">
-  <iframe
-    src="[youtube.com](https://www.youtube.com/embed/8LpdvFeekeY?si=1sYmCp1GGV9LMG_S)"
-    title="Sound of Mint Live performance (We Love Buzz)"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
+
+      <!-- ✅ YouTube video FIXED -->
+      <div class="music-video-wrap">
+        <div class="video-frame">
+          <iframe
+            src="[youtube.com](https://www.youtube.com/embed/8LpdvFeekeY?si=1sYmCp1GGV9LMG_S)"
+            title="Sound of Mint Live performance (We Love Buzz)"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
 
